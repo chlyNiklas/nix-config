@@ -28,9 +28,16 @@
     settings = {
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       
+      "org/gnome/desktop/interface".icon-theme = "Papirus-Dark";
       "org/gnome/desktop/sound".event-sound = false;
 
-      "org/gnome/desktop/peripherals/mouse".speed = -0.62666666666666682;
+      "org/gnome/shell".favorite-apps = [
+	"org.gnome.Calendar.desktop"
+	"thunderbird.desktop"
+	"brave-browser.desktop" 
+	"org.gnome.Console.desktop"
+	"org.gnome.Nautilus.desktop"
+      ];
 
       "org/gnome/shell".enabled-extensions = [
 	  "blur-my-shell@aunetx"
@@ -39,6 +46,8 @@
 	  "sp-tray@sp-tray.esenliyim.github.com"
 	  "gnome-compact-top-bar@metehan-arslan.github.io"
       ];
+
+      "org/gnome/desktop/peripherals/mouse".speed = -0.62666666666666682;
 
       "org/gnome/shell/extensions/sp-tray".position = 1;
       "org/gnome/shell/extensions/sp-tray".hidden-when-paused = true;
