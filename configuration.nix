@@ -81,12 +81,12 @@
   users.users.schreifuchs = {
     isNormalUser = true;
     description = "schreifuchs";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      firefox
       thunderbird
       brave
       nextcloud-client
+      spotify
 
       python3
       rustc
@@ -97,10 +97,28 @@
       # Graphics
       krita
       gimp
+      darktable
+
+      # Gibb
+      vmware-workstation
+      minikube
+      kubectl
+      qemu
+      lens
+
+      # misc
+      papirus-icon-theme
+      gnomeExtensions.spotify-tray
+      gnomeExtensions.blur-my-shell 
+      gnomeExtensions.gsconnect
+      gnomeExtensions.compact-top-bar 
+      gnomeExtensions.runcat
     ];
     shell = pkgs.zsh;
     useDefaultShell = true;
   };
+
+  virtualisation.docker.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs;};
