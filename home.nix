@@ -28,24 +28,30 @@
     settings = {
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       
+      "org/gnome/Console".custom-font = "FiraCode Nerd Font Mono 11";
+
       "org/gnome/desktop/interface".icon-theme = "Papirus-Dark";
+
       "org/gnome/desktop/sound".event-sound = false;
 
       "org/gnome/shell".favorite-apps = [
-	"org.gnome.Calendar.desktop"
-	"thunderbird.desktop"
-	"brave-browser.desktop" 
-	"org.gnome.Console.desktop"
-	"org.gnome.Nautilus.desktop"
+        "org.gnome.Calendar.desktop"
+        "thunderbird.desktop"
+        "brave-browser.desktop" 
+        "org.gnome.Console.desktop"
+        "org.gnome.Nautilus.desktop"
       ];
 
       "org/gnome/shell".enabled-extensions = [
-	  "blur-my-shell@aunetx"
-	  "gsconnect@andyholmes.github.io"
-	  "runcat@kolesnikov.se"
-	  "sp-tray@sp-tray.esenliyim.github.com"
-	  "gnome-compact-top-bar@metehan-arslan.github.io"
+        "blur-my-shell@aunetx"
+        "gsconnect@andyholmes.github.io"
+        "runcat@kolesnikov.se"
+        "sp-tray@sp-tray.esenliyim.github.com"
+        "gnome-compact-top-bar@metehan-arslan.github.io"
       ];
+
+      "org/gnome/mutter".dynamic-workspaces = true;
+      "org/gnome/mutter".edge-tiling = true;
 
       "org/gnome/desktop/peripherals/mouse".speed = -0.62666666666666682;
 
@@ -53,9 +59,9 @@
       "org/gnome/shell/extensions/sp-tray".hidden-when-paused = true;
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-	binding = "<Control><Alt>t";
-	command = "kgx";
-	name = "Console";
+        binding = "<Control><Alt>t";
+        command = "kgx";
+        name = "Console";
       };
     };
   };
@@ -112,6 +118,9 @@
 	  lua-ls.enable = true;
 	  html.enable = true;
 	  cssls.enable = true;
+	  gopls.enable = true;
+	  svelte.enable = true;
+	  tailwindcss.enable = true;
 	  nixd = {
 	    enable = true;
 	    autostart = true;
@@ -121,34 +130,14 @@
 
       nvim-cmp = {
 	enable = true;
-	completion.autocomplete = [ "TextChanged" ];
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	];
-	mapping = {
-	  "<C-Space>" = "cmp.mapping.complete()";
-	  "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-	  "<C-e>" = "cmp.mapping.close()";
-	  "<C-f>" = "cmp.mapping.scroll_docs(4)";
-	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<S-Tab>" = {
-	    action = "cmp.mapping.select_prev_item()";
-	    modes = [
-	      "i"
-	      "s"
-	    ];
-	  };
-	  "<Tab>" = {
-	    action = "cmp.mapping.select_next_item()";
-	    modes = [
-	      "i"
-	      "s"
-	    ];
-	  };
-	};
+	autoEnableSources = true;
       };
+
+      treesitter = {
+	enable = true;
+
+      };
+
       autoclose.enable = true;
       lightline.enable = true;
     };

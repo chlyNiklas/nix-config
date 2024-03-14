@@ -87,21 +87,33 @@
       brave
       nextcloud-client
       spotify
+      onlyoffice-bin
+      libreoffice
 
       python3
       rustc
       cargo
       go
       thefuck
+      lunarvim
 
       # Graphics
       krita
       gimp
       darktable
 
+      # music
+
+      reaper
+      ChowKick
+      ChowPhaser
+      ChowCentaur
+      CHOWTapeModel
+      distrho
+      surge 
+
       # Gibb
       vmware-workstation
-      minikube
       kubectl
       qemu
       lens
@@ -119,7 +131,13 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.vmware.host.enable = true;
 
+  services.k3s.enable = true;
+  services.k3s.role = "server";
+  services.k3s.extraFlags = toString [
+    # "--kubelet-arg=v=4" # Optionally add additional args to k3s
+  ];
   home-manager = {
     extraSpecialArgs = { inherit inputs;};
     users = {
@@ -149,6 +167,14 @@
     git
     htop
     neofetch
+    dust
+
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+
+    nodejs_21
+    nodePackages.pnpm
+    go 
+    k3s
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -165,7 +191,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 6443 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
