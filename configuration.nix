@@ -169,6 +169,8 @@
     neofetch
     dust
 
+    gnome-network-displays
+
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
 
     nodejs_21
@@ -184,6 +186,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
 
   # List services that you want to enable:
 
@@ -205,4 +208,5 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
+
 
