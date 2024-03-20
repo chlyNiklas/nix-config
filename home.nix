@@ -33,6 +33,7 @@
       "org/gnome/desktop/interface".icon-theme = "Papirus-Dark";
 
       "org/gnome/desktop/sound".event-sound = false;
+      "org/gnome/desktop/sound".theme-name = "__custom";
 
       "org/gnome/shell".favorite-apps = [
         "org.gnome.Calendar.desktop"
@@ -58,6 +59,11 @@
       "org/gnome/shell/extensions/sp-tray".position = 1;
       "org/gnome/shell/extensions/sp-tray".hidden-when-paused = true;
 
+
+      "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
+	"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Control><Alt>t";
         command = "kgx";
@@ -79,12 +85,6 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
   
-    shellAliases = {
-      ll = "ls -l";
-      vim = "nvim";
-      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#default";
-    };
-
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "thefuck" ];
@@ -93,6 +93,14 @@
 
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
+
+    shellAliases = {
+      ll = "ls -l";
+      vim = "nvim";
+      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#default";
+    };
+
+    initExtra = "neofetch";
   };
 
   programs.nixvim = {
