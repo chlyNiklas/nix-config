@@ -14,19 +14,19 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e3105665-efa7-49f8-a65c-54c6310d2777";
+    { device = "/dev/disk/by-uuid/0a68733f-ed87-486d-b5f2-4b2775dcb32e";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-d5887e1f-2c72-4925-8b2f-a5bcf0b184db".device = "/dev/disk/by-uuid/d5887e1f-2c72-4925-8b2f-a5bcf0b184db";
+  boot.initrd.luks.devices."luks-322d32f7-dfcc-442d-9b69-4c1445a4bb50".device = "/dev/disk/by-uuid/322d32f7-dfcc-442d-9b69-4c1445a4bb50";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/CE33-91CF";
+    { device = "/dev/disk/by-uuid/EBBC-BC45";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/9753bbd1-2798-4e16-90c4-dcbbf40f5e05"; }
+    [ { device = "/dev/disk/by-uuid/9135457d-3136-45e9-8cb7-92177e9c20a1"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

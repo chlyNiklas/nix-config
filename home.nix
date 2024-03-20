@@ -76,7 +76,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
   
     shellAliases = {
@@ -128,7 +128,7 @@
 	};
       };
 
-      nvim-cmp = {
+      cmp = {
 	enable = true;
 	autoEnableSources = true;
       };

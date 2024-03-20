@@ -11,7 +11,7 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
-
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -114,9 +114,9 @@
 
       # Gibb
       vmware-workstation
-      kubectl
+      #kubectl
       qemu
-      lens
+      #lens
 
       # misc
       papirus-icon-theme
@@ -133,11 +133,11 @@
   virtualisation.docker.enable = true;
   virtualisation.vmware.host.enable = true;
 
-  services.k3s.enable = true;
-  services.k3s.role = "server";
-  services.k3s.extraFlags = toString [
+  #services.k3s.enable = true;
+  #services.k3s.role = "server";
+  #services.k3s.extraFlags = toString [
     # "--kubelet-arg=v=4" # Optionally add additional args to k3s
-  ];
+  #];
   home-manager = {
     extraSpecialArgs = { inherit inputs;};
     users = {
