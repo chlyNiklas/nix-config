@@ -85,6 +85,8 @@
     packages = with pkgs; [
       thunderbird
       brave
+      firefox
+      signal-desktop
       nextcloud-client
       spotify
       onlyoffice-bin
@@ -125,6 +127,8 @@
       gnomeExtensions.gsconnect
       gnomeExtensions.compact-top-bar 
       gnomeExtensions.runcat
+      gnomeExtensions.tiling-assistant
+      gnomeExtensions.caffeine
     ];
     shell = pkgs.zsh;
     useDefaultShell = true;

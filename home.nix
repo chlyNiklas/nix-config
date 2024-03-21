@@ -49,10 +49,14 @@
         "runcat@kolesnikov.se"
         "sp-tray@sp-tray.esenliyim.github.com"
         "gnome-compact-top-bar@metehan-arslan.github.io"
+	"tiling-assistant@leleat-on-github"
+	"caffeine@patapon.info"
       ];
 
+      "org/gnome/shell/extensions/caffeine".indicator-position-max = 3;
+
       "org/gnome/mutter".dynamic-workspaces = true;
-      "org/gnome/mutter".edge-tiling = true;
+      "org/gnome/mutter".edge-tiling = false;
 
       "org/gnome/desktop/peripherals/mouse".speed = -0.62666666666666682;
 
@@ -62,6 +66,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
 	"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+	"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -69,6 +74,12 @@
         command = "kgx";
         name = "Console";
       };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Control><Alt>e";
+        command = "nautilus";
+        name = "Nautilus";
+      };
+
     };
   };
 
