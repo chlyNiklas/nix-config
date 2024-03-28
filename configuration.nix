@@ -106,6 +106,7 @@
       go
       thefuck
       lunarvim
+      vscodium
 
       # Graphics
       krita
